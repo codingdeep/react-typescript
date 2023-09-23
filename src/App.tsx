@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Container, Row, Col, Card, CardTitle, CardBody} from 'reactstrap'
+import DynamicTable from "./components/DynamicTable/DynamicTable";
+import studentMock from "./MockData/student.mock";
+import PostMock from "./MockData/post.mock";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="p-5">
+            <Container>
+                <Row>
+                    <Col>
+                        <Card>
+                            <CardTitle>
+                                <h1 className="text-center">Dynamic Table With Typescript</h1>
+                            </CardTitle>
+                            <CardBody>
+                                <DynamicTable data={studentMock}/>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Card>
+                            <CardTitle>
+                                <h1 className="text-center">Dynamic Table With Typescript</h1>
+                            </CardTitle>
+                            <CardBody>
+                                <DynamicTable data={PostMock}/>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    );
 }
 
 export default App;
